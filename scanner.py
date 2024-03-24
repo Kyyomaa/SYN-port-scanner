@@ -1,6 +1,5 @@
 from scapy.all import IP, TCP, ICMP
 import sys
-import logging
 from threading import Thread, Lock
 import time
 
@@ -8,7 +7,6 @@ import time
 stealth port scanner. Sends a TCP syn, when it recieves a SYN-ACK, resents the connection.
 '''
 
-logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 class Synscan():
     
     def __init__(self):
@@ -40,7 +38,7 @@ class Synscan():
                 elif response.haslayer(ICMP):
                 
                     if(int(response.getlayer(ICMP).type)==3 and int(response.getlayer(ICMP).code) in [1,2,3,9,10,13]):
-                        #print("Port:"+str(port)+" Filtered")
+                        #print("Port:"+str(port)+" Filtered") #debug
                         pass
     def start(self):
         threads = []
