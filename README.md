@@ -2,4 +2,4 @@
 Learning the scapy module by creating some test scanners
 
 ## Example usage 
-sudo python3 synportscan.py scanme.nmap.org 1 500
+sudo python3 scanner.py scanme.nmap.org 1 500
